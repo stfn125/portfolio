@@ -1,0 +1,19 @@
+.theapp {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 30px ;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #FFF8F8;
+}
+
+.prj-main {
+    width: 100%;
+    flex-basis: 90%;
+    height: 100%;
+    position: relative;
+    background-color: blue;
+}
