@@ -39,7 +39,6 @@ body {
     height: 100%;
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
     position: relative;
     overflow: hidden;
 }
@@ -48,12 +47,13 @@ body {
 .projects-title {
     width: 100%;
     height: 100%;
-    flex-basis: 15%;
+    flex-basis: 50%;
     display: flex;
     align-items: center;
-    font-size: 35px;
+    font-size: 100px;
     animation: fadeInLetf ease-in-out .5s 1;
     -webkit-animation: fadeInLetf ease-in-out .5s 1;
+    color: #4b3b2d90;
 }
 
 @keyframes fadeInLetf {
@@ -68,47 +68,62 @@ body {
 
 /*********** Slider ***********/
 .projects {
-    max-width: 100%;
-    height: 100%;
-    flex-basis: 75%;
-    display: flex;
-    grid-auto-flow: column;
-    column-gap: 5%;
-    overflow-y: hidden;
-    overflow-x: scroll;
+    width: 100%;
+    height: auto;
+    flex-basis: 50%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 85px;
+    column-gap: 0;
+    row-gap: 25px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 50px 0 50px 0;
 }
 
 
 /* Scroll bar */
 ::-webkit-scrollbar {
-    height: 5px;
+    display: none;
 }
-
-::-webkit-scrollbar-track {
-    background: rgba(75, 59, 45, 0.05);
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(75, 59, 45, 0.1);
-    border-radius: 100px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(75, 59, 45, 0.2);
-}
-
-
 
 /*********** Each project ***********/
-.project {    
-    height: 90%;
-    aspect-ratio: 1/1;
-    border-radius: 35px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 5px rgba(75, 59, 45, 0.25);
-    animation: fadeInUp ease-in-out 0.7s 1;
-    -webkit-animation: fadeInUp ease-in-out 0.7s 1;
+.project-container {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project {
+    width: 90%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #fff5f5;
+    box-shadow: rgb(77, 60, 46, .35) 0px 5px 10px -5px, 0 0px 2px  rgb(77, 60, 46, .15);
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+
+.project:hover {
+    transform: scale(1.05,1.05);
+    box-shadow: rgb(77, 60, 46, .25) 0px 15px 25px -15px, 0 0px 2px  rgb(77, 60, 46, .15);
+} 
+.project-name {
+    font-size: 20px;
+    font-weight: 450;
+    color: rgba(77, 60, 46, 0.65);
+    cursor: pointer;
+}
+
+.project-type {
+    font-size: 12px;
+    font-weight: 300;
+    cursor: pointer;
 }
 
 @keyframes fadeInUp {
@@ -122,93 +137,7 @@ body {
         transform: translateY(0%);
     }
 }
-/* img */
-/*p1*/
-.tuitionfree>img {
-    width: 150%;
-    height: 310%;
-    margin-top: -105%;
-    margin-left: -26%;
-    transform: rotate(-20deg) scale(0.9,0.9);
-    transition: transform .3s ease-in-out;
-}
 
-/*p2*/
-.theapp>img {
-    width: 100%;
-    height: 100%;
-    transition: transform .3s ease-in-out;
-}
-
-/*p3*/
-.nycoffee>img {
-    width: 150%;
-    height: 300%;
-    margin-top: -80%;
-    margin-left: -30%;
-    transform: rotate(30deg) scale(0.7, 0.7);
-    transition: transform .3s ease-in-out;
-}
-
-
-/* text background */
-.text-bg {
-    width: 70%;
-    height: 50%;
-    position: absolute;
-    bottom: 0;
-    background-color: rgb(38, 28, 28);
-    filter: blur(100px);
-    transform: translateY(200%);
-    transition: transform .3s ease-in-out;
-}
-
-/* text */
-.prj-name {
-    width: 70%;
-    height: auto;
-    left: 5%;
-    bottom: 35%;
-    font-size: 30px;
-    font-weight: 300;
-    color: #FCF8F7;
-    position: absolute;
-    transform: translateX(-200%);
-    transition: transform .3s ease-in-out;
-
-}
-
-.prj-type {
-    width: 70%;
-    height: auto;
-    left: 5%;
-    bottom: 25%;
-    font-size: 15px;
-    font-weight: 300;
-    color: #FCF8F7;
-    position: absolute;
-    transform: translateX(-100%);
-    transition: transform .3s ease-in-out;
-}
-
-.see-btn {
-    width: auto;
-    height: auto;
-    left: 5%;
-    bottom: 8%;
-    padding: 8px 20px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 300;
-    color: #FCF8F7;
-    position: absolute;
-    border-radius: 15px;
-    border: 1px solid #FCF8F7;
-    transform: translateY(300%);
-    transition: transform .3s ease-in-out;
-    cursor: pointer;
-
-}
 
 /********** Hover **********/
 
